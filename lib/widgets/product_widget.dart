@@ -18,6 +18,7 @@ class ProductWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+
           Image(
             image: NetworkImage(product.thumbnailUri),
             fit: BoxFit.contain,
