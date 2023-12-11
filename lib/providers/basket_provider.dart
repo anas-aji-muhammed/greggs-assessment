@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:greggs_challenge/models/product_model.dart';
 
 // For managing basket state
-class BasketController extends ChangeNotifier {
+class BasketProvider extends ChangeNotifier {
   ProductModel? item;
   double totalBasketPrice = 0.0;
   bool eatIn = true;

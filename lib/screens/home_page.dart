@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:greggs_challenge/screens/basket_page.dart';
 import 'package:provider/provider.dart';
 
-import '../controllers/basket_controller.dart';
+import '../providers/basket_provider.dart';
 import '../models/product_model.dart';
 import '../services/api_service.dart';
 import '../widgets/product_widget.dart';
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final basket = Provider.of<BasketController>(context);
+    final basket = Provider.of<BasketProvider>(context);
 
     return Scaffold(
       appBar: AppBar(

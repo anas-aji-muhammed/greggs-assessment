@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:greggs_challenge/controllers/basket_controller.dart';
+import 'package:greggs_challenge/providers/basket_provider.dart';
 import 'package:greggs_challenge/screens/home_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (context) => BasketController(), // Initialize the Basket class
+      create: (context) => BasketProvider(), // Initialize the Basket class
       child: const MyApp(),
     ),  );
 }
