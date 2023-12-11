@@ -34,7 +34,7 @@ class ProductAddUpdateWidget extends StatelessWidget {
         )
       ],
     )
-    ;;
+    ;
   }
 }
 

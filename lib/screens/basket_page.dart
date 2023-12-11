@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:greggs_challenge/widgets/product_widget.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/basket_provider.dart';
