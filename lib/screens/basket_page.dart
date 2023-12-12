@@ -11,7 +11,6 @@ class BasketPage extends StatefulWidget {
 }
 
 class _BasketPageState extends State<BasketPage> {
-
   @override
   Widget build(BuildContext context) {
     final basket = Provider.of<BasketProvider>(context);
@@ -25,15 +24,17 @@ class _BasketPageState extends State<BasketPage> {
         padding: const EdgeInsets.all(20),
         color: Colors.blue,
         width: MediaQuery.of(context).size.width,
-        child: Center(child: Text("Total:- £ ${basket.getBasketTotal()}"),
-          heightFactor: .5,),
+        child: Center(
+          heightFactor: .5,
+          child: Text("Total:- £ ${basket.getBasketTotal()}"),
+        ),
       ),
-      body: (basket.item==null)? const Center(child:  Text("No item in the basket. \nPlease add from homepage"))
-      : const Column(
-        children: [
-          BasketProductWidget()
-        ],
-      ),
+      body: (basket.item == null)
+          ? const Center(
+              child: Text("No item in the basket. \nPlease add from homepage"))
+          : const Column(
+              children: [BasketProductWidget()],
+            ),
     );
   }
 }

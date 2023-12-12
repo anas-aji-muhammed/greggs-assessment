@@ -17,24 +17,22 @@ class ProductAddUpdateWidget extends StatelessWidget {
       children: [
         basket.item == null
             ? ElevatedButton(
-            onPressed: () {
-              basket.addToBasket(product, true);
-            },
-            child: const Text("Add to Basket"))
+                onPressed: () {
+                  basket.addToBasket(product, true);
+                },
+                child: const Text("Add to Basket"))
             : Row(
-          children: [
-            IconButton(
-                onPressed: () => basket.addToBasket(product, false),
-                icon: const Icon(Icons.remove)),
-            Text("${basket.item!.quantity}"),
-            IconButton(
-                onPressed: () => basket.addToBasket(product, true),
-                icon: const Icon(Icons.add))
-          ],
-        )
+                children: [
+                  IconButton(
+                      onPressed: () => basket.addToBasket(product, false),
+                      icon: const Icon(Icons.remove)),
+                  Text("${basket.item!.quantity}"),
+                  IconButton(
+                      onPressed: () => basket.addToBasket(product, true),
+                      icon: const Icon(Icons.add))
+                ],
+              )
       ],
-    )
-    ;
+    );
   }
 }
-

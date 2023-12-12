@@ -8,8 +8,10 @@ import '../providers/basket_provider.dart';
 
 class ProductWidget extends StatefulWidget {
   final ProductModel product;
-  const ProductWidget(
-      {super.key, required this.product,});
+  const ProductWidget({
+    super.key,
+    required this.product,
+  });
 
   @override
   State<ProductWidget> createState() => _ProductWidgetState();
@@ -25,7 +27,9 @@ class _ProductWidgetState extends State<ProductWidget> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ProductImageWidget(imageUrl: widget.product.imageUri, ),
+          ProductImageWidget(
+            imageUrl: widget.product.imageUri,
+          ),
           Text(widget.product.articleName),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -35,8 +39,9 @@ class _ProductWidgetState extends State<ProductWidget> {
               Text("Total: \n £${basket.getBasketTotal()} "),
             ],
           ),
-          ProductAddUpdateWidget(product: widget.product,)
-
+          ProductAddUpdateWidget(
+            product: widget.product,
+          )
         ],
       ),
     );

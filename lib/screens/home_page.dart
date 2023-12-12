@@ -49,13 +49,16 @@ class _HomePageState extends State<HomePage> {
           Row(
             children: [
               Text(
-                basket.eatIn ? 'Eat In' : 'Eat out', // Display "Eatin" or "Eatout"
+                basket.eatIn
+                    ? 'Eat In'
+                    : 'Eat out', // Display "Eatin" or "Eatout"
               ),
               Switch(
                 value: basket.eatIn,
                 onChanged: (bool value) {
                   basket.toggleEatIn();
-                },),
+                },
+              ),
             ],
           ),
         ],
@@ -64,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (BuildContext context) =>  const BasketPage(),
+              builder: (BuildContext context) => const BasketPage(),
             ),
           );
         },
@@ -75,9 +78,8 @@ class _HomePageState extends State<HomePage> {
               child: CircularProgressIndicator(), // Loading indicator
             )
           : ProductWidget(
-            product: product,
-
-          ),
+              product: product,
+            ),
     );
   }
 }

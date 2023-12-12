@@ -9,17 +9,16 @@ class BasketProvider extends ChangeNotifier {
 
   //Method to add product to basket
   void addToBasket(ProductModel product, bool isIncrement) {
-    if(item==null){
+    if (item == null) {
       item = product;
       item!.quantity = 1;
-    }
-    else{
-      if(isIncrement){
+    } else {
+      if (isIncrement) {
         item!.quantity += 1;
-      }else{
-        if(item!.quantity==1){
+      } else {
+        if (item!.quantity == 1) {
           removeFromBasket(product);
-        }else{
+        } else {
           item!.quantity -= 1;
         }
       }
@@ -36,9 +35,9 @@ class BasketProvider extends ChangeNotifier {
   }
 
   //Returns basket total
-  Object getBasketTotal(){
-    if(item==null) return 0.00;
-    if(eatIn) {
+  Object getBasketTotal() {
+    if (item == null) return 0.00;
+    if (eatIn) {
       totalBasketPrice = item!.eatInPrice * item!.quantity;
     } else {
       totalBasketPrice = item!.eatOutPrice * item!.quantity;
@@ -48,7 +47,7 @@ class BasketProvider extends ChangeNotifier {
   }
 
   //Toggle between eatin and eatout
-  void toggleEatIn(){
+  void toggleEatIn() {
     eatIn = !eatIn;
     notifyListeners();
   }
